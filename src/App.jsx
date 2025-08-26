@@ -1,11 +1,25 @@
+import { useState } from "react";
 import "./styles.css";
 
 function App() {
+  const [isOn, setIsOn] = useState(false);
+  const [display, setDisplay] = useState("0");
+
+  function toggleOnOff() {
+    if (isOn) {
+      setIsOn(false);
+      setDisplay("0");
+    } else {
+      setIsOn(true);
+      setDisplay("0");
+    }
+  }
+
   return (
     <>
       <div className="board">
         <div className="row">
-          <textarea id="input"></textarea>
+          <textarea id="input" readOnly value={isOn ? display : ""}></textarea>
         </div>
         <div className="row">
           <button>AC</button>
@@ -32,7 +46,7 @@ function App() {
           <button>+</button>
         </div>
         <div className="row">
-          <button>ON</button>
+          <button onClick={toggleOnOff}>{isOn ? "Off" : "On"}</button>
           <button>0</button>
           <button>.</button>
           <button>=</button>
