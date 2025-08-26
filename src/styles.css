@@ -1,9 +1,49 @@
-* {
-  box-sizing: border-box;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #f3f3f3;
+  font-family: Arial, sans-serif;
 }
 
 .board {
-  width: 50px;
-  display: flex;
-  background-color: red;
+  width: 280px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  display: grid;
+  gap: 10px;
+}
+
+#input {
+  grid-column: span 4;
+  height: 60px;
+  font-size: 1.4rem;
+  text-align: right;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.row {
+  display: contents;
+}
+
+.row button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: #eaeaea;
+  cursor: pointer;
+}
+
+.row button:hover {
+  background: #d4d4d4;
 }
