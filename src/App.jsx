@@ -7,12 +7,18 @@ function App() {
 
   function toggleOnOff() {
     if (isOn) {
-      setIsOn(false);
+      setIsOn(false); // turn off
       setDisplay("0");
     } else {
-      setIsOn(true);
+      setIsOn(true); // turn on
       setDisplay("0");
     }
+  }
+
+  // Clear textarea
+  function clearAll() {
+    if (!isOn) return;
+    setDisplay("0");
   }
 
   return (
@@ -22,7 +28,7 @@ function App() {
           <textarea id="input" readOnly value={isOn ? display : ""}></textarea>
         </div>
         <div className="row">
-          <button>AC</button>
+          <button onClick={clearAll}>AC</button>
           <button>+/-</button>
           <button>%</button>
           <button>/</button>
