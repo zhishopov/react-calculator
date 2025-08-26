@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./styles.css";
 
 function App() {
-  const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState(true);
   const [display, setDisplay] = useState("0");
 
   function toggleOnOff() {
