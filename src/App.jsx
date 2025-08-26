@@ -1,7 +1,12 @@
+import "./styles.css";
+
 function App() {
   return (
     <>
       <div className="board">
+        <div className="row">
+          <textarea id="input"></textarea>
+        </div>
         <div className="row">
           <button>AC</button>
           <button>+/-</button>
