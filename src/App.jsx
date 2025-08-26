@@ -21,6 +21,26 @@ function App() {
     setDisplay("0");
   }
 
+  // Handle number button clicks
+  function numberClickHandler(number) {
+    setDisplay((oldNum) => {
+      if (oldNum === "0") {
+        return String(number);
+      }
+      return oldNum + String(number);
+    });
+  }
+
+  // Handle decimal button click
+  function decimalClickHandler() {
+    setDisplay((prevBtn) => {
+      if (prevBtn.includes(".")) {
+        return prevBtn;
+      }
+      return prevBtn === "0" ? "0." : prevBtn + ".";
+    });
+  }
+
   return (
     <>
       <div className="board">
@@ -34,27 +54,27 @@ function App() {
           <button>/</button>
         </div>
         <div className="row">
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
+          <button onClick={() => numberClickHandler(7)}>7</button>
+          <button onClick={() => numberClickHandler(8)}>8</button>
+          <button onClick={() => numberClickHandler(9)}>9</button>
           <button>X</button>
         </div>
         <div className="row">
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
+          <button onClick={() => numberClickHandler(4)}>4</button>
+          <button onClick={() => numberClickHandler(5)}>5</button>
+          <button onClick={() => numberClickHandler(6)}>6</button>
           <button>-</button>
         </div>
         <div className="row">
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
+          <button onClick={() => numberClickHandler(1)}>1</button>
+          <button onClick={() => numberClickHandler(2)}>2</button>
+          <button onClick={() => numberClickHandler(3)}>3</button>
           <button>+</button>
         </div>
         <div className="row">
           <button onClick={toggleOnOff}>{isOn ? "Off" : "On"}</button>
-          <button>0</button>
-          <button>.</button>
+          <button onClick={() => numberClickHandler(0)}>0</button>
+          <button onClick={decimalClickHandler}>.</button>
           <button>=</button>
         </div>
       </div>
